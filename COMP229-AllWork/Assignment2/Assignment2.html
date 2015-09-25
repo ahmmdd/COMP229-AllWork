@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    
+    <link href="Content/reset.css" rel="stylesheet" />
+    <link href="Content/main.css" rel="stylesheet" />
+    <title>Mohammed Ahmed - Sony</title>
+</head>
+<body>
+
+    <header>
+        <img src="Assets/sony-logo.png" />
+
+        <nav align="center" id="picture">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li>
+                    <a href="#">Assignments</a>
+                    <ul>
+                        <li><a href="index.html">Assignment1</a></li>
+                        <li><a href="Assignment2/Assignment2.html">Assignment2</a></li>
+                    </ul>
+                </li>
+                <li><a href="mailto:ahmed3415@gmail.com">Contact</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="wrapper">
+        <div class="row">
+            <div class="col-md-12 jumbotron">
+            </div>
+        </div>
+        <div class="row">
+            <div class="datetime">
+                <div class="col-md-6 col-xs-12">
+                    <h2><span class="label label-primary" id="time"></span></h2>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <h2><span class="label label-primary" id="date"></span></h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>XB950AP Extra Bass Smartphone-capable Headphones</h1>
+                    <img src="Assets/sonyHp.png" />
+                    <h1>Price: $ 129.99</h1>
+
+                    <div>
+                        <p>
+                            Perfect for DJ use, the sleek black MDR-XB950AP Headphones will transport you into another world with its powerful neodymium drivers, compatible with both Apple and Android.
+                        </p>
+                        <h1>Specialised sound</h1>
+                        <p>
+                            Ensuring you'll be able to enjoy a balanced base response, the Advanced Direct Vibe Structure ensures you get just that, whatever your musical style. The dynamic neodymium drivers deliver nothing but precise sound via the 40 mm drivers. These make whatever track you're playing sound like you're right there, even when listening to the most demanding of tracks. The <strong>MDRXB950APB</strong> Headphones render every sound in optimum clarity, with a broad frequency range. This wideband spans from 3 Hz to 28,000 Hz and is designed to compliment modern heavy bass music.
+                        </p>
+                        <h1>Comfort comes first</h1>
+                        <p>
+                            The Sony <strong>MDRXB950APB</strong> Headphones are over-ear headphones, delivering nothing less than rich sound. In conjunction with this, their design has been carefully thought out to be comfortable and durable when being worn. The pressure-relieving cushions which have been designed to complement the shape of your ears mean that you'll hardly lose any sound to the outside world once your favourite track is on. The <strong>MDRXB950APB</strong> Headphones use seamless 3D sewing to seal in the sound and reflect the acoustics back to your ear. With an adjustable headband, they can be made to fit anyone wearing them. Their swivel folding style is perfect for when they are on and off, making it easy if you need to have a quick conversation or to transport and store them.
+                        </p>
+                        <h1>Built-in controls</h1>
+                        <p>
+                            Compatible with Android and Apple, the Sony <strong>MDRXB950APB</strong> Headphones are perfect for listening to all your favourite tracks from any of your devices. You'll be able to accept and end phone calls with the handy in-line microphone and remote control. The <strong>MDRXB950APB</strong> Headphones offer you the best way to enjoy music and calls on the go whilst keeping your hands free to concentrate on whatever else you've got going on. Hear every single beat with the black Sony MDR-XB950AP Headphones and stay in control with the in-line remote control and microphone.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-xs-6">
+                    <div class="dropdown">
+                        <select class="btn btn-block btn-primary">
+                            <option selected="selected">Black</option>
+                            <option>Red</option>
+                            <!--<option>6</option>-->
+                        </select>
+                    </div>
+                    <div class="dropdown">
+                        <select class="btn btn-block btn-primary">
+                            <option selected="selected">Qty</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+                    <button class="btn btn-block btn-danger">Add to Cart >></button>
+                </div>
+            </div>
+
+            <h3>Your favorite brand is:</h3>
+            <div class="row">
+
+                <div class="col-md-12">
+                    <p cols="100" rows="6" id="txt"></p>
+                </div>
+
+            </div>
+        </div>
+        <br />
+    </div>
+    <script>
+        var text = "";
+        var brand = prompt("What is your favorite brand of watches?", "Sony");
+        var times = prompt("On scale of 100, how much do you like it?", "93");
+        for (var i = 0; i < times; i++) {
+            text += brand + " ";
+        }
+        document.getElementById('txt').innerHTML = text.fontcolor(changeColor());
+        function changeColor() {
+
+            var letters = '0123456789ABCDEF'.split('');
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+
+                color = color + letters[Math.floor(Math.random() * 16)];
+            }
+
+            setTimeout(function () {
+
+                changeColor()
+            }, 1000);
+            return color;
+        }
+
+        changeColor();
+
+
+        (function () {
+            function checkTime(i) {
+                return (i < 10) ? "0" + i : i;
+            }
+
+            function startTime() {
+                var today = new Date(),
+                h = checkTime(today.getHours()),
+                m = checkTime(today.getMinutes()),
+                s = checkTime(today.getSeconds());
+                document.getElementById('time').innerHTML = "Current Time:  " + h + ":" + m + ":" + s;
+                t = setTimeout(function () {
+                    startTime()
+                }, 500);
+            }
+            startTime();
+        })();
+        var fortnightAway = new Date(),
+        date = fortnightAway.getDate(),
+        month = "January,February,March,April,May,June,July,August,September,October,November,December".split(",")[fortnightAway.getMonth()];
+        function nth(d) {
+            if (d > 3 && d < 21) return 'th';
+            switch (d % 10) {
+                case 1: return "st".sup();
+                case 2: return "nd".sup();
+                case 3: return "rd".sup();
+                default: return "th".sup();
+            }
+        }
+        document.getElementById('date').innerHTML = month + " " + date + nth(date) + " " + fortnightAway.getFullYear();
+
+    </script>
+    <footer>
+        <hr />&copy; Copyright Mohammed Ahmed Student# 300833356 - COMP229 - Advance Web Application Development - Fall 2015
+        <hr>
+    </footer>
+</body>
+</html>
